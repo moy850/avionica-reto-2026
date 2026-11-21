@@ -1,0 +1,163 @@
+
+\documentclass[10pt]{article}
+
+% Paquetes basicos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+% Margenes
+\geometry{margin=1.5cm}
+
+\begin{document}
+
+% ENCABEZADO
+\begin{center}
+{\Large \textbf{REPORTE TECNICO}}\\
+\textbf{Reto de Avionica AAIAQ 2026}\\
+Ruta 1: Telemetria y adquisicion de datos
+\end{center}
+
+\noindent
+\textbf{Nombre:} MOISES RICO\\
+\textbf{Carrera:} TECNOLOGIA\\
+\textbf{Semestre:} 1ERO
+
+% OBJETIVO
+\section{Objetivo}
+
+Desarrollar un programa en Python para simular
+el vuelo de un cohete y procesar los datos de
+telemetria, identificando su altitud, velocidad
+y los principales eventos durante el vuelo.
+
+% DESARROLLO
+\section{Desarrollo}
+
+\subsection{Simulacion del vuelo}
+
+Se programaron las siguientes fases:
+
+\begin{itemize}
+\item Rampa: el cohete permanece en reposo.
+\item Propulsion: comienza el ascenso.
+\item Vuelo balistico: actua la gravedad.
+\item Paracaidas: comienza el descenso.
+\item Aterrizaje: el cohete llega al suelo.
+\end{itemize}
+
+Para calcular la altitud se utilizo la siguiente
+ecuacion de movimiento:
+
+\begin{equation}
+h_f=h_i+v_i\Delta t+
+\frac{1}{2}a(\Delta t)^2
+\end{equation}
+
+\subsection{Procesamiento de datos}
+
+Se utilizo Python para leer los datos del archivo
+CSV y guardarlos en listas.
+
+Despues se aplico un promedio movil para
+suavizar las mediciones:
+
+\begin{equation}
+\bar{h}_i=\frac{1}{N}
+\sum_{k=0}^{N-1}h_{i-k}
+\end{equation}
+
+Tambien se calculo la velocidad vertical:
+
+\begin{equation}
+v_i=\frac{h_i-h_{i-1}}{t_i-t_{i-1}}
+\end{equation}
+
+Finalmente, se programo la deteccion del
+despegue, apogeo y aterrizaje.
+
+% RESULTADOS
+\section{Resultados}
+
+Se generaron graficas para observar el
+comportamiento del cohete durante el vuelo.
+
+\begin{center}
+\includegraphics[width=0.85\linewidth]
+{comparacion_graficas.png}
+
+Figura 1. Comparacion de altitud original y filtrada.
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.85\linewidth]
+{velocidad_cohete.png}
+
+Figura 2. Velocidad vertical del cohete.
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.85\linewidth]
+{eventos_vuelo.png}
+
+Figura 3. Eventos principales del vuelo.
+\end{center}
+
+Como se observa en las graficas, el filtrado
+permite suavizar las mediciones y facilita
+el analisis de la trayectoria.
+
+% CONCLUSIONES
+\section{Conclusiones}
+
+El proyecto permitio aprender a utilizar Python
+para simular un vuelo y procesar datos.
+
+Se practicaron ciclos, condiciones, listas,
+archivos CSV y graficas.
+
+Como mejora futura se propone agregar ruido
+a las mediciones y mejorar la limpieza de los
+datos recibidos.
+
+% BITACORA
+\section{Bitacora de obstaculos}
+
+Durante el desarrollo se presentaron algunas
+dificultades:
+
+\begin{itemize}
+
+\item Se presentaron dificultades al crear y
+organizar carpetas en GitHub. Se resolvieron
+siguiendo los pasos de creacion de archivos.
+
+\item Al comparar las graficas aparecieron
+errores en el codigo. Se revisaron las
+instrucciones y las variables utilizadas.
+
+\item Se tuvieron dificultades para organizar
+el reporte en LaTeX. Se utilizo Overleaf para
+aprender a escribir y compilar el documento.
+
+\end{itemize}
+
+% REFERENCIAS
+\section{Referencias}
+
+\begin{itemize}
+\item Documentacion de Python:
+\texttt{https://docs.python.org/3/}
+
+\item Documentacion de Matplotlib:
+\texttt{https://matplotlib.org/}
+
+\item Reto de Reclutamiento de Avionica AAIAQ 2026.
+
+\item OpenAI ChatGPT: apoyo para comprender,
+revisar y organizar el codigo y el reporte.
+\end{itemize}
+
+\end{document}
