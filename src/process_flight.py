@@ -105,3 +105,31 @@ for i in range(posicion, len(altitudes_filtradas)):
 print("PROCESAMIENTO TERMINADO")
 
 print("Cantidad de datos:", len(tiempos))
+
+# PASO 8: COMPARAR GRAFICAS
+
+plt.figure(figsize=(10, 5))
+
+# Graficar datos originales
+plt.plot(tiempos, altitudes, label="Altitud original")
+
+# Graficar datos filtrados
+plt.plot(tiempos, altitudes_filtradas, label="Altitud filtrada")
+
+# Agregar titulos
+plt.xlabel("Tiempo en segundos")
+plt.ylabel("Altitud en metros")
+
+plt.title("Comparacion de altitud")
+
+# Mostrar leyenda y cuadricula
+plt.legend()
+plt.grid()
+
+# Guardar grafica
+plt.savefig("comparacion_graficas.png")
+
+# Mostrar grafica
+plt.show()
+
+print("Grafica creada correctamente")
