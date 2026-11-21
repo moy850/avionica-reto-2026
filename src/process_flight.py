@@ -133,3 +133,62 @@ plt.savefig("comparacion_graficas.png")
 plt.show()
 
 print("Grafica creada correctamente")
+
+# PASO 9: GRAFICA DE VELOCIDAD
+
+# Crear la grafica
+plt.figure(figsize=(10, 5))
+
+# Dibujar la velocidad
+plt.plot(tiempos[1:], velocidades)
+
+# Agregar titulos
+plt.xlabel("Tiempo en segundos")
+plt.ylabel("Velocidad en m/s")
+
+plt.title("Velocidad vertical del cohete")
+
+# Mostrar cuadricula
+plt.grid()
+
+# Guardar la imagen
+plt.savefig("velocidad_cohete.png")
+
+# Mostrar grafica
+plt.show()
+
+print("Grafica de velocidad creada correctamente")
+
+# PASO 10: GRAFICA DE EVENTOS
+
+# Crear la grafica
+plt.figure(figsize=(10, 5))
+
+# Dibujar la altitud
+plt.plot(tiempos, altitudes_filtradas, label="Altitud")
+
+# Marcar el despegue
+plt.axvline(tiempo_despegue, color="green", label="Despegue")
+
+# Marcar el apogeo
+plt.axvline(tiempo_apogeo, color="red", label="Apogeo")
+
+# Marcar el aterrizaje
+plt.axvline(tiempo_aterrizaje, color="orange", label="Aterrizaje")
+
+# Agregar titulos
+plt.xlabel("Tiempo en segundos")
+plt.ylabel("Altitud en metros")
+plt.title("Eventos principales del vuelo")
+
+# Mostrar leyenda y cuadricula
+plt.legend()
+plt.grid()
+
+# Guardar grafica
+plt.savefig("eventos_vuelo.png")
+
+# Mostrar grafica
+plt.show()
+
+print("Grafica de eventos creada correctamente")
